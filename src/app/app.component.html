@@ -1,0 +1,20 @@
+<main class="container">
+  <app-title>{{ title }}</app-title>
+  <section class="mb-8" *ngIf="dataSource$ | async as dta; else loading">
+    <app-table
+      [columnsKeys]="columnsKeys"
+      [columnsNames]="columnsNames"
+      [dataSource]="dta"
+      
+    ></app-table>
+  </section>
+  <ng-template #loading>
+    <div class="container__spinner">
+    
+      <app-loading></app-loading>
+    </div>
+   
+
+  </ng-template>
+  
+</main>

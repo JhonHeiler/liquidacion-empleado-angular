@@ -1,0 +1,21 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3" *ngFor="let column of columnsNames">
+          {{ column }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        [class]="rowIndex < LIMIT ? 'bg-[#bbf7d0]' : 'bg-white border-b'"
+        *ngFor="let data of dataSource; let rowIndex = index"
+      >
+        <td class="px-6 py-4" *ngFor="let key of columnsKeys">
+          {{ data[key] }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
